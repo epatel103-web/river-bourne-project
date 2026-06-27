@@ -6,6 +6,10 @@
 <title>River Bourne Project | St George's Weybridge</title>
 
 <style>
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
   font-family:Arial,sans-serif;
@@ -14,22 +18,23 @@ body{
   line-height:1.7;
 }
 
+/* TOP BANNER */
 .creator{
   background:#0f4f61;
   color:#fff;
   text-align:center;
-  padding:14px;
-  font-size:24px;
+  padding:12px;
+  font-size:20px;
   font-weight:bold;
 }
 
 /* LIVE UPDATE */
 .live-update{
   background:#ffdd57;
-  padding:18px;
+  padding:16px;
   text-align:center;
   font-weight:bold;
-  font-size:18px;
+  font-size:15px;
 }
 
 .live-update span{
@@ -38,69 +43,89 @@ body{
   margin-top:5px;
 }
 
+/* HEADER */
 header{
   background:linear-gradient(135deg,#1e88a8,#15657c);
   color:white;
   text-align:center;
-  padding:50px 20px;
+  padding:35px 15px;
 }
 
 .logo-row{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:20px;
+  gap:12px;
   flex-wrap:wrap;
 }
 
-.logo-row img{height:90px}
+.logo-row img{
+  height:70px;
+  max-width:100%;
+}
 
+/* NAV */
 nav{
   background:#0f4f61;
   position:sticky;
   top:0;
-  padding:12px;
-  text-align:center;
   z-index:1000;
+  padding:10px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
 }
 
 nav a{
   color:white;
   text-decoration:none;
-  margin:0 12px;
   font-weight:bold;
-  font-size:15px;
+  font-size:13px;
+  padding:6px 10px;
+  background:rgba(255,255,255,0.12);
+  border-radius:6px;
 }
 
+/* SECTION */
 .section{
   max-width:1100px;
-  margin:20px auto;
+  margin:18px auto;
   background:white;
-  padding:30px;
+  padding:22px;
   border-radius:14px;
-  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 
-h2{color:#15657c}
+h2{
+  color:#15657c;
+  font-size:22px;
+}
 
-/* SLIDESHOW */
+h3{
+  font-size:17px;
+}
+
+/* SLIDESHOW (UNCHANGED STRUCTURE) */
 .slideshow{
   position:relative;
   max-width:1100px;
   margin:20px auto;
   border-radius:14px;
   overflow:hidden;
-  box-shadow:0 2px 12px rgba(0,0,0,.15);
+  box-shadow:0 2px 12px rgba(0,0,0,0.15);
 }
 
 .slide{
   display:none;
   width:100%;
-  height:450px;
+  height:250px;
   object-fit:cover;
 }
 
-.slide.active{display:block}
+.slide.active{
+  display:block;
+}
 
 .slide-controls{
   text-align:center;
@@ -113,17 +138,50 @@ h2{color:#15657c}
   border:none;
   padding:8px 14px;
   margin:0 5px;
-  cursor:pointer;
   border-radius:6px;
   font-weight:bold;
+  cursor:pointer;
 }
 
+/* TEXT SIZE ONLY ADJUSTED FOR MOBILE */
+p, li{
+  font-size:15px;
+}
+
+/* FOOTER */
 footer{
   background:#15657c;
   color:white;
   text-align:center;
-  padding:40px;
-  margin-top:30px;
+  padding:30px;
+}
+
+/* DESKTOP UPGRADE ONLY */
+@media (min-width:768px){
+  .slide{
+    height:450px;
+  }
+
+  nav a{
+    font-size:14px;
+    padding:8px 14px;
+  }
+
+  .section{
+    padding:30px;
+  }
+
+  h2{
+    font-size:26px;
+  }
+
+  p, li{
+    font-size:16px;
+  }
+
+  .creator{
+    font-size:24px;
+  }
 }
 </style>
 </head>
@@ -132,33 +190,31 @@ footer{
 
 <div class="creator">Created by Ethan Patel</div>
 
-<!-- LIVE UPDATE (TOP PRIORITY) -->
 <div class="live-update">
-📢 Riverside Showcase Event – Monday 27 June, 4:30pm
+📢 Riverside Showcase Event – Monday 27 June — 4:30pm
 <span>The Hut by the Chapel Tennis Courts | Students presenting river restoration results, biodiversity data & water quality findings</span>
 </div>
 
 <header>
 <div class="logo-row">
 <img src="sgc.png">
-<div style="font-size:40px;">×</div>
+<div style="font-size:34px;">×</div>
 <img src="sert.png">
 </div>
 <h1>🌊 River Bourne Project</h1>
 <p>St George's Weybridge × South East Rivers Trust</p>
 </header>
 
-<!-- UPDATED QUICK LINK BAR -->
 <nav>
 <a href="#overview">Overview</a>
 <a href="#importance">Importance</a>
-<a href="#learning">Student Experience</a>
-<a href="#phases">Restoration Phases</a>
+<a href="#learning">Learning</a>
+<a href="#phases">Phases</a>
 <a href="#monitoring">Monitoring</a>
-<a href="#olirogers">Team</a>
+<a href="#team">Team</a>
 </nav>
 
-<!-- SLIDESHOW -->
+<!-- SLIDESHOW (UNCHANGED) -->
 <div class="slideshow">
   <img class="slide active" src="river1.jpg">
   <img class="slide" src="river2.jpg">
@@ -176,76 +232,79 @@ footer{
 
 <section class="section" id="overview">
 <h2>🌍 Overview</h2>
+<p>The River Bourne Project is a long-term environmental restoration initiative at St George’s Weybridge, working in partnership with the South East Rivers Trust. It allows students to take part in real-world conservation work while developing a deeper understanding of river ecosystems.</p>
 
-<p>The River Bourne Project is a long-term environmental restoration initiative based at St George’s Weybridge in partnership with the South East Rivers Trust. It focuses on improving the ecological health of the River Bourne, a tributary of the River Thames system.</p>
-
-<p>The river has historically been impacted by channel straightening, dredging and urban runoff, leading to reduced biodiversity and degraded habitats. This project aims to reverse those impacts through evidence-based restoration.</p>
-
-<p>Students play an active role in real ecological research, contributing to ongoing conservation decisions that directly affect the river environment.</p>
+<p>The aim of the project is to monitor, restore and improve the health of the River Bourne through hands-on fieldwork, data collection and environmental action.</p>
 </section>
 
 <section class="section" id="importance">
 <h2>🌱 Why This Project Matters</h2>
+<p>Healthy rivers are essential ecosystems that support biodiversity, regulate water quality and reduce flood risk. The River Bourne acts as a vital wildlife corridor connecting habitats across Surrey.</p>
 
-<p>Healthy rivers are essential ecosystems that support biodiversity, regulate water quality and reduce flood risk. The River Bourne acts as a vital wildlife corridor, connecting habitats across Surrey.</p>
+<p>Restoration improves oxygen levels, sediment balance and habitat diversity, allowing species such as fish, aquatic insects and birds to return and thrive.</p>
 
-<p>Restoration improves oxygen levels, sediment balance and habitat diversity, allowing species such as brown trout, aquatic insects, kingfishers and herons to return and thrive.</p>
-
-<p>For the school, the project demonstrates long-term environmental responsibility and a commitment to sustainability beyond the classroom. It also gives students the opportunity to directly contribute to local ecological recovery.</p>
+<p>For St George’s Weybridge, the project demonstrates a commitment to sustainability, outdoor learning and environmental stewardship. Students gain valuable experience while making a genuine contribution to the local environment.</p>
 </section>
 
 <section class="section" id="learning">
 <h2>🎓 Student Learning & Experience</h2>
 
-<p>Students participate in authentic field-based scientific research, acting as environmental scientists working on a live river system. This moves learning beyond theory into real ecological investigation.</p>
+<p>Working on the River Bourne Project gives students the opportunity to experience environmental science and conservation in a way that simply cannot be replicated in a classroom. Rather than learning about river systems from textbooks alone, students are able to work directly within a real ecosystem and see how rivers function first-hand.</p>
 
-<p>They gather, process and interpret environmental data to understand how river systems respond to human impact and restoration strategies.</p>
+<p>Students collect and analyse environmental data, investigate river processes and learn how restoration projects can improve habitats for wildlife. Practical fieldwork helps develop a deeper understanding of sustainability, biodiversity and environmental management.</p>
 
 <ul>
-<li>Water quality testing (pH, nitrates, turbidity, dissolved oxygen)</li>
-<li>Habitat classification and ecological surveying</li>
-<li>River flow and channel morphology studies</li>
-<li>Species identification and biodiversity tracking</li>
-<li>GIS-style mapping and site surveying</li>
-<li>Long-term environmental data analysis</li>
+<li>Water quality testing</li>
+<li>Habitat assessment</li>
+<li>River surveying and mapping</li>
+<li>Wildlife identification</li>
+<li>Environmental data analysis</li>
+<li>Understanding river systems</li>
 </ul>
 
-<p>The project strengthens critical thinking, teamwork, leadership and scientific communication. It also introduces students to careers in ecology, hydrology, conservation science, environmental engineering and sustainability planning.</p>
+<p>The project builds teamwork, leadership, communication and problem-solving skills while encouraging responsibility for the environment. It also provides insight into careers linked to geography, conservation, ecology and sustainability.</p>
 </section>
 
 <section class="section" id="phases">
 <h2>🛠️ Restoration Phases</h2>
 
-<h3>Phase One (2018) – Initial Restoration</h3>
-<p>Early work focused on reversing historical modifications to the river channel. Straightened sections were re-naturalised to improve flow diversity and habitat complexity.</p>
-<p>Key outcomes included improved spawning grounds, increased gravel retention and the creation of refuge zones for fish during high flow events.</p>
-
-<h3>Phase Two (2022–2024) – Habitat Engineering</h3>
-<p>This phase introduced targeted river engineering features designed to restore natural processes.</p>
-
+<h3>Phase One (2018)</h3>
+<p>A 2016 Environment Agency survey found the river was “not habitable for fish”. Restoration focused on reversing channel straightening and dredging impacts.</p>
 <ul>
-<li>Installation of deflectors to redirect flow</li>
-<li>Construction of berms to create varied habitats</li>
-<li>Creation of V-deflectors for sediment movement</li>
-<li>Backwater habitat development from former drainage channels</li>
-<li>Tree thinning to increase light penetration and biodiversity</li>
+<li>Fish spawning areas improved</li>
+<li>Gravel levels restored</li>
+<li>Backwaters and refuge areas created</li>
+<li>Pollution interception features added</li>
 </ul>
 
-<p>These interventions significantly improved habitat diversity and ecological resilience.</p>
-
-<h3>Phase Three (2025–2026+) – Student-Led Monitoring</h3>
-<p>The current phase focuses on long-term ecological monitoring and student involvement in data collection.</p>
-
+<h3>Phase Two (2022–2024)</h3>
 <ul>
-<li>Student-led field surveys and data collection</li>
-<li>Design planning and environmental permissions</li>
-<li>Construction monitoring and impact assessment</li>
-<li>Long-term biodiversity and water quality tracking</li>
+<li>Spawning, refuge and foraging habitats created</li>
+<li>Tree thinning for light and biodiversity</li>
+<li>Deflectors, berms and V-deflectors installed</li>
+<li>Backwater created from former ditch</li>
+</ul>
+
+<p><b>Milestones:</b></p>
+<ul>
+<li>March 2023: surveys, permissions, design</li>
+<li>May 2024: assessment and tender</li>
+<li>Nov 2024: construction and reporting</li>
+</ul>
+
+<p><b>Final result:</b> 6 deflectors, 3 berms, 2 V-deflectors, 1 bank, 1 backwater.</p>
+
+<h3>Phase Three (2025–2026+)</h3>
+<ul>
+<li>Student collaboration and monitoring</li>
+<li>Design and permissions (2025–2026)</li>
+<li>Construction (2026)</li>
+<li>Long-term monitoring from 2026 onwards</li>
 </ul>
 </section>
 
 <section class="section" id="monitoring">
-<h2>📊 Long-Term Monitoring</h2>
+<h2>📊 Monitoring</h2>
 
 <p>A key part of the River Bourne Project is continuous monitoring. Rivers are dynamic systems, meaning conditions change seasonally and over time.</p>
 
@@ -254,19 +313,18 @@ footer{
 <p>This ongoing research helps determine the success of restoration efforts and provides valuable scientific evidence for future river management strategies.</p>
 </section>
 
-<section class="section" id="olirogers">
-<h2>👤 Meet the Team</h2>
+<section class="section" id="team">
+<h2>👤 Team</h2>
 
 <p><b>Oli Rogers</b><br>
 Education and Engagement Officer – Working with Communities</p>
 
-<p>Oli Rogers is a qualified teacher with a degree in Geology and Physical Geography. He has extensive experience in outdoor education and field-based science learning across Key Stage 3 to A Level.</p>
+<p>Oli Rogers is a qualified teacher with a degree in Geology and Physical Geography. He has experience teaching students from Key Stage 3 through to A Level and has spent recent years working as an outdoor educator, helping young people connect directly with nature.</p>
 
-<p>He supports students in developing practical ecological skills, understanding river systems and engaging in meaningful conservation work. His role helps bridge classroom learning with real-world environmental science.</p>
+<p>Through the River Bourne Project, Oli supports students in developing practical fieldwork skills, understanding river ecosystems and taking part in meaningful conservation work. His enthusiasm for the outdoors and environmental education has helped make the project both engaging and inspiring.</p>
 </section>
 
 <footer>
-<h2>Created by Ethan Patel</h2>
 <p>River Bourne Project | St George’s Weybridge</p>
 </footer>
 
